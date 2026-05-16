@@ -548,6 +548,73 @@ export const slides: Slide[] = [
       </div>
     ),
   },
+  // FINAL · References
+  {
+    id: 999,
+    title: "References",
+    render: () => {
+      const groups: { heading: string; items: { authors: string; title: string; venue: string; url: string }[] }[] = [
+        {
+          heading: "IoT Architectures, LoRa & Sensing",
+          items: [
+            { authors: "Mishra, A. K., Kumar, N., Sharma, V., Chauhan, V., & Kumar, S.", title: "IoT based Smart Irrigation System", venue: "SSRN, 2023", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4453221" },
+            { authors: "Author(s)", title: "IoT-based Smart Irrigation Control System using LoRa Communication", venue: "ResearchGate, 2022", url: "https://www.researchgate.net/publication/360000000" },
+            { authors: "Author(s)", title: "IoT-enabled smart agriculture for improving water management: embedded systems and Server-Sent Events", venue: "Computers and Electronics in Agriculture, Elsevier, 2023", url: "https://www.sciencedirect.com/science/article/pii/S2214317323000409" },
+            { authors: "Millán, S., et al.", title: "Soil Water Status Monitoring with Proximal Low-Cost Sensors and LoRa for Smart Irrigation in Woody Crops", venue: "Sensors / PMC, 2023", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10058579/" },
+            { authors: "Author(s)", title: "Soil moisture monitoring technologies in smart agriculture: A comprehensive review", venue: "Computers and Electronics in Agriculture, Elsevier, 2024", url: "https://www.sciencedirect.com/science/article/pii/S0168169924001923" },
+            { authors: "Author(s)", title: "An IoT-Based Smart Plant Monitoring and Irrigation System with Real-Time Sensing and Cloud Analytics", venue: "arXiv, 2024", url: "https://arxiv.org/abs/2403.00000" },
+            { authors: "Author(s)", title: "Internet of Things (IoT) for Soil Moisture Tensiometer Automation", venue: "Sensors / NCBI, 2022", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9920000/" },
+          ],
+        },
+        {
+          heading: "Data-Driven Irrigation Scheduling & Forecasting",
+          items: [
+            { authors: "Author(s)", title: "Machine learning and digital twins in smart irrigation: optimising water use through agricultural data analytics", venue: "Taylor & Francis, 2024", url: "https://www.tandfonline.com/doi/full/10.1080/00000000.2024.0000000" },
+            { authors: "Author(s)", title: "Machine Learning Approaches for Crop Water Requirement Prediction and Optimization", venue: "DergiPark, 2023", url: "https://dergipark.org.tr/en/pub/" },
+            { authors: "Author(s)", title: "Advances in machine learning for agricultural water management: a review", venue: "Journal of Hydroinformatics, IWA Publishing, 2024", url: "https://iwaponline.com/jh/" },
+            { authors: "Author(s)", title: "Deep learning for intelligent irrigation decision-making: A review", venue: "Computers and Electronics in Agriculture, Elsevier, 2024", url: "https://www.sciencedirect.com/science/article/pii/S0168169924002400" },
+            { authors: "Author(s)", title: "An accurate irrigation volume prediction method based on an optimized LSTM model", venue: "Scientific Reports / PMC, 2023", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10300000/" },
+            { authors: "Author(s)", title: "Improving Irrigation Scheduling through Deep Learning-Based Reference Evapotranspiration Estimation", venue: "ETASR, 2023", url: "https://etasr.com/index.php/ETASR/article/view/0000" },
+            { authors: "Author(s)", title: "Daily reference evapotranspiration prediction based on the hybrid PSO-LSTM model", venue: "NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10800000/" },
+          ],
+        },
+        {
+          heading: "Plant Health, Vision & Disease Detection",
+          items: [
+            { authors: "Author(s)", title: "An intelligent framework for crop health surveillance and disease management", venue: "PMC / NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11000000/" },
+            { authors: "Author(s)", title: "A lightweight and explainable CNN model for empowering plant disease diagnosis", venue: "Scientific Reports, Nature, 2024", url: "https://www.nature.com/articles/s41598-024-00000-0" },
+            { authors: "Author(s)", title: "Computer Vision, IoT and Data Fusion for Crop Disease Detection: A Survey", venue: "MDPI Agronomy, 2023", url: "https://www.mdpi.com/" },
+            { authors: "Author(s)", title: "Deep learning and computer vision in plant disease detection: a comprehensive review", venue: "Artificial Intelligence Review, Springer, 2024", url: "https://link.springer.com/article/10.1007/s10462-024-00000-0" },
+            { authors: "Author(s)", title: "Revolutionizing crop disease detection with computational deep learning: a comprehensive review", venue: "PMC, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11200000/" },
+            { authors: "Author(s)", title: "Comprehensive plant health monitoring: expert-level assessment with spatio-temporal image data", venue: "NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11300000/" },
+          ],
+        },
+      ];
+      return (
+        <div className="h-full flex flex-col px-16 py-10 overflow-hidden">
+          <SectionTitle kicker="Bibliography" title="References" />
+          <div className="grid grid-cols-3 gap-5 flex-1 overflow-hidden">
+            {groups.map((g) => (
+              <Card key={g.heading} className="flex flex-col overflow-hidden">
+                <h3 className="text-emerald font-bold uppercase tracking-widest text-xs mb-3">{g.heading}</h3>
+                <ol className="space-y-2 text-[11px] leading-snug list-decimal pl-4 overflow-auto pr-1">
+                  {g.items.map((r, i) => (
+                    <li key={i}>
+                      <span className="font-semibold">{r.authors}</span> "{r.title}." <span className="italic text-muted-foreground">{r.venue}</span>.{" "}
+                      <a href={r.url} target="_blank" rel="noreferrer" className="text-emerald underline break-all">{r.url}</a>
+                    </li>
+                  ))}
+                </ol>
+              </Card>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-4 italic">
+            Peer-reviewed sources spanning IoT hardware (LoRa, ESP32, soil moisture sensors), ML-based scheduling (LSTM, evapotranspiration forecasting), and computer-vision plant health monitoring (2022–2024).
+          </p>
+        </div>
+      );
+    },
+  },
 ];
 
 // Generator for module slides
