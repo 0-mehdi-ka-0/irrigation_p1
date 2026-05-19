@@ -48,23 +48,15 @@ export const slides: Slide[] = [
           </div>
           <h1 className="text-6xl font-extrabold leading-[1.05] mb-6">
             Autonomous Smart Irrigation Systems:
-            <span className="block mt-3 bg-gradient-to-r from-emerald to-emerald-soft bg-clip-text text-transparent">
+            {/* <span className="block mt-3 bg-gradient-to-r from-emerald to-emerald-soft bg-clip-text text-transparent">
               From Ancient Canals to Intelligent Agriculture
-            </span>
+            </span> */}
           </h1>
           <p className="text-2xl text-muted-foreground font-light mb-12">A Comparative Study and System Proposal</p>
           <div className="flex flex-wrap justify-center gap-8 text-left">
             <div className="px-6 py-4 border-l-4 border-emerald">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Author</div>
-              <div className="text-lg font-semibold">[Your Name]</div>
-            </div>
-            <div className="px-6 py-4 border-l-4 border-emerald">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Institution</div>
-              <div className="text-lg font-semibold">[Your Institution]</div>
-            </div>
-            <div className="px-6 py-4 border-l-4 border-emerald">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Year</div>
-              <div className="text-lg font-semibold">2026</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">Supervising Professor</div>
+              <div className="text-lg font-semibold">Pr O. Hioual</div>
             </div>
           </div>
         </div>
@@ -183,7 +175,7 @@ export const slides: Slide[] = [
     render: () => {
       const p = [
         { n: "WaterBee", c: "EU", s: "WSN precision irrigation", w: "40%", crop: "Mixed crops", l: "Limited plant monitoring" },
-        { n: "CropX", c: "Israel/USA", s: "Smart soil sensors, cloud", w: "25%", crop: "40+ countries", l: "Cloud-dependent" },
+        { n: "CropX", c: "USA", s: "Smart soil sensors, cloud", w: "25%", crop: "40+ countries", l: "Cloud-dependent" },
         { n: "Solar IoT Irrig.", c: "India 2022", s: "ESP32 + Solar + LoRa", w: "30%", crop: "Smallholder farms", l: "Small scale only" },
         { n: "IRRIMET", c: "Morocco/Algeria", s: "FAO ETo scheduling", w: "20%", crop: "Cereals", l: "No real-time sensors" },
         { n: "Microsoft FarmBeats", c: "USA", s: "Sensors + edge + TVWS", w: "30%", crop: "Mixed", l: "Complex setup" },

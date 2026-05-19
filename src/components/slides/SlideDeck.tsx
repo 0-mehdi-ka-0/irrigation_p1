@@ -1,6 +1,17 @@
 import { useEffect, useState, useCallback } from "react";
 import { slides } from "./slideData";
 import { ChevronLeft, ChevronRight, Grid3x3, Maximize2, X } from "lucide-react";
+import nhsastLogo from "@/assets/nhsast-logo.png";
+
+function SlideLogo({ className = "h-14 w-auto max-w-[200px]" }: { className?: string }) {
+  return (
+    <img
+      src={nhsastLogo}
+      alt="NHSAST — National Higher School of Autonomous Systems Technology"
+      className={`absolute top-4 right-5 object-contain object-right pointer-events-none z-10 ${className}`}
+    />
+  );
+}
 
 export default function SlideDeck() {
   const [current, setCurrent] = useState(0);
@@ -52,8 +63,7 @@ export default function SlideDeck() {
         >
           {slide.render()}
 
-          {/* Logo placeholder top-right */}
-          <div className="absolute top-5 right-6 text-xs text-muted-foreground/70 font-mono tracking-wider">[ LOGO ]</div>
+          <SlideLogo />
 
           {/* Slide number bottom-right */}
           <div className="absolute bottom-5 right-6 flex items-center gap-2 text-sm">
@@ -111,6 +121,7 @@ export default function SlideDeck() {
               >
                 <div className="absolute inset-0 origin-top-left" style={{ transform: "scale(0.32)", width: "312.5%", height: "312.5%" }}>
                   {s.render()}
+                  <SlideLogo className="h-12 w-auto max-w-[160px] top-5 right-6" />
                 </div>
                 <div className="absolute bottom-2 left-3 text-emerald font-bold bg-background/80 px-2 py-0.5 rounded text-sm">
                   {String(i + 1).padStart(2, "0")}
