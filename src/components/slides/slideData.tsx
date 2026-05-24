@@ -1,8 +1,29 @@
 import type { ReactNode } from "react";
 import {
-  Droplets, History, Cpu, Globe, BarChart3, Target, Layers, CheckCircle2,
-  Sprout, CloudSun, Leaf, Radio, Settings, Network, Trophy, Telescope,
-  Wifi, Sun, Gauge, Database, Eye, Boxes, Smartphone, AlertTriangle
+  Droplets,
+  History,
+  Cpu,
+  Globe,
+  BarChart3,
+  Target,
+  Layers,
+  CheckCircle2,
+  Sprout,
+  CloudSun,
+  Leaf,
+  Radio,
+  Settings,
+  Network,
+  Trophy,
+  Telescope,
+  Wifi,
+  Sun,
+  Gauge,
+  Database,
+  Eye,
+  Boxes,
+  Smartphone,
+  AlertTriangle,
 } from "lucide-react";
 
 export type Slide = {
@@ -12,7 +33,15 @@ export type Slide = {
 };
 
 // ---------- Helpers ----------
-const SectionTitle = ({ icon: Icon, kicker, title }: { icon?: any; kicker?: string; title: string }) => (
+const SectionTitle = ({
+  icon: Icon,
+  kicker,
+  title,
+}: {
+  icon?: any;
+  kicker?: string;
+  title: string;
+}) => (
   <div className="mb-8">
     {kicker && (
       <div className="inline-flex items-center gap-2 text-emerald font-semibold tracking-widest uppercase text-sm mb-3">
@@ -25,7 +54,9 @@ const SectionTitle = ({ icon: Icon, kicker, title }: { icon?: any; kicker?: stri
 );
 
 const Card = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
-  <div className={`bg-card/60 backdrop-blur border border-border rounded-2xl p-6 shadow-[var(--shadow-card)] ${className}`}>
+  <div
+    className={`bg-card/60 backdrop-blur border border-border rounded-2xl p-6 shadow-[var(--shadow-card)] ${className}`}
+  >
     {children}
   </div>
 );
@@ -39,8 +70,14 @@ export const slides: Slide[] = [
       <div className="relative h-full flex flex-col items-center justify-center text-center px-16">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[600px] h-[600px] rounded-full border border-emerald/30 ripple" />
-          <div className="absolute w-[600px] h-[600px] rounded-full border border-emerald/30 ripple" style={{ animationDelay: "1s" }} />
-          <div className="absolute w-[600px] h-[600px] rounded-full border border-emerald/30 ripple" style={{ animationDelay: "2s" }} />
+          <div
+            className="absolute w-[600px] h-[600px] rounded-full border border-emerald/30 ripple"
+            style={{ animationDelay: "1s" }}
+          />
+          <div
+            className="absolute w-[600px] h-[600px] rounded-full border border-emerald/30 ripple"
+            style={{ animationDelay: "2s" }}
+          />
         </div>
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 border border-emerald/30 text-emerald font-semibold text-sm tracking-widest uppercase mb-8">
@@ -52,10 +89,14 @@ export const slides: Slide[] = [
               From Ancient Canals to Intelligent Agriculture
             </span> */}
           </h1>
-          <p className="text-2xl text-muted-foreground font-light mb-12">A Comparative Study and System Proposal</p>
+          <p className="text-2xl text-muted-foreground font-light mb-12">
+            A Comparative Study and System Proposal
+          </p>
           <div className="flex flex-wrap justify-center gap-8 text-left">
             <div className="px-6 py-4 border-l-4 border-emerald">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Supervising Professor</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                Supervising Professor
+              </div>
               <div className="text-lg font-semibold">Pr O. Hioual</div>
             </div>
           </div>
@@ -82,7 +123,10 @@ export const slides: Slide[] = [
           <SectionTitle kicker="Outline" title="Table of Contents" />
           <div className="grid grid-cols-2 gap-5">
             {items.map((it, i) => (
-              <div key={i} className="flex items-center gap-5 p-5 rounded-xl bg-card/40 border border-border hover:border-emerald/60 transition-colors">
+              <div
+                key={i}
+                className="flex items-center gap-5 p-5 rounded-xl bg-card/40 border border-border hover:border-emerald/60 transition-colors"
+              >
                 <div className="w-12 h-12 rounded-xl bg-emerald/15 text-emerald flex items-center justify-center shrink-0">
                   <it.icon className="w-6 h-6" />
                 </div>
@@ -103,7 +147,11 @@ export const slides: Slide[] = [
     id: 3,
     render: () => {
       const t = [
-        { y: "6000 BC", t: "Ancient Canals", d: "Gravity-fed earthen channels (Mesopotamia, Nile)" },
+        {
+          y: "6000 BC",
+          t: "Ancient Canals",
+          d: "Gravity-fed earthen channels (Mesopotamia, Nile)",
+        },
         { y: "200 BC", t: "Qanats & Aqueducts", d: "Underground channels, Roman aqueducts" },
         { y: "1700s", t: "Water Wheels & Pumps", d: "Animal/wind-powered lifting" },
         { y: "1850s", t: "Steam Pumps", d: "Large-scale water delivery" },
@@ -120,7 +168,10 @@ export const slides: Slide[] = [
             <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-emerald/20 via-emerald to-emerald/20 rounded-full" />
             <div className="relative grid grid-cols-9 gap-2 w-full">
               {t.map((m, i) => (
-                <div key={i} className={`flex flex-col items-center ${i % 2 === 0 ? "pt-0 pb-40" : "pt-40 pb-0"}`}>
+                <div
+                  key={i}
+                  className={`flex flex-col items-center ${i % 2 === 0 ? "pt-0 pb-40" : "pt-40 pb-0"}`}
+                >
                   <div className={`text-center ${i % 2 === 0 ? "order-1" : "order-3"}`}>
                     <div className="text-emerald font-bold text-sm">{m.y}</div>
                     <div className="font-semibold text-sm mt-1 leading-tight">{m.t}</div>
@@ -141,15 +192,47 @@ export const slides: Slide[] = [
     id: 4,
     render: () => {
       const tech = [
-        { i: "📡", n: "IoT Sensors", d: "Soil moisture, temperature, humidity, EC — real-time field data." },
-        { i: "📶", n: "Wireless Communication", d: "LoRa, Zigbee, Wi-Fi, NB-IoT — long-range low-power data." },
-        { i: "🔌", n: "Microcontrollers & Edge", d: "Arduino, Raspberry Pi, ESP32 — local processing & control." },
-        { i: "☀️", n: "Solar Energy Systems", d: "Off-grid power supply for remote agricultural deployments." },
-        { i: "🔧", n: "Actuators & Valves", d: "Automated water flow control based on sensor thresholds." },
-        { i: "☁️", n: "Cloud Platforms", d: "AWS IoT, Google Cloud, ThingsBoard — storage & dashboards." },
-        { i: "📊", n: "Data Analytics", d: "Forecasting, scheduling optimization, smart rule engines." },
+        {
+          i: "📡",
+          n: "IoT Sensors",
+          d: "Soil moisture, temperature, humidity, EC — real-time field data.",
+        },
+        {
+          i: "📶",
+          n: "Wireless Communication",
+          d: "LoRa, Zigbee, Wi-Fi, NB-IoT — long-range low-power data.",
+        },
+        {
+          i: "🔌",
+          n: "Microcontrollers & Edge",
+          d: "Arduino, Raspberry Pi, ESP32 — local processing & control.",
+        },
+        {
+          i: "☀️",
+          n: "Solar Energy Systems",
+          d: "Off-grid power supply for remote agricultural deployments.",
+        },
+        {
+          i: "🔧",
+          n: "Actuators & Valves",
+          d: "Automated water flow control based on sensor thresholds.",
+        },
+        {
+          i: "☁️",
+          n: "Cloud Platforms",
+          d: "AWS IoT, Google Cloud, ThingsBoard — storage & dashboards.",
+        },
+        {
+          i: "📊",
+          n: "Data Analytics",
+          d: "Forecasting, scheduling optimization, smart rule engines.",
+        },
         { i: "👁️", n: "Computer Vision", d: "Plant health detection using image processing." },
-        { i: "🔮", n: "Digital Twins", d: "Virtual crop/field simulation for monitoring & decisions." },
+        {
+          i: "🔮",
+          n: "Digital Twins",
+          d: "Virtual crop/field simulation for monitoring & decisions.",
+        },
         { i: "📱", n: "Mobile & Web Apps", d: "Farmer-facing dashboards and alert systems." },
       ];
       return (
@@ -174,12 +257,54 @@ export const slides: Slide[] = [
     id: 5,
     render: () => {
       const p = [
-        { n: "WaterBee", c: "EU", s: "WSN precision irrigation", w: "40%", crop: "Mixed crops", l: "Limited plant monitoring" },
-        { n: "CropX", c: "USA", s: "Smart soil sensors, cloud", w: "25%", crop: "40+ countries", l: "Cloud-dependent" },
-        { n: "Solar IoT Irrig.", c: "India 2022", s: "ESP32 + Solar + LoRa", w: "30%", crop: "Smallholder farms", l: "Small scale only" },
-        { n: "IRRIMET", c: "Morocco/Algeria", s: "FAO ETo scheduling", w: "20%", crop: "Cereals", l: "No real-time sensors" },
-        { n: "Microsoft FarmBeats", c: "USA", s: "Sensors + edge + TVWS", w: "30%", crop: "Mixed", l: "Complex setup" },
-        { n: "IBM Watson Agri.", c: "Global", s: "Satellite + IoT advisory", w: "20%", crop: "Large farms", l: "Expensive, advisory only" },
+        {
+          n: "WaterBee",
+          c: "EU",
+          s: "WSN precision irrigation",
+          w: "40%",
+          crop: "Mixed crops",
+          l: "Limited plant monitoring",
+        },
+        {
+          n: "CropX",
+          c: "USA",
+          s: "Smart soil sensors, cloud",
+          w: "25%",
+          crop: "40+ countries",
+          l: "Cloud-dependent",
+        },
+        {
+          n: "Solar IoT Irrig.",
+          c: "India 2022",
+          s: "ESP32 + Solar + LoRa",
+          w: "30%",
+          crop: "Smallholder farms",
+          l: "Small scale only",
+        },
+        {
+          n: "IRRIMET",
+          c: "Morocco/Algeria",
+          s: "FAO ETo scheduling",
+          w: "20%",
+          crop: "Cereals",
+          l: "No real-time sensors",
+        },
+        {
+          n: "Microsoft FarmBeats",
+          c: "USA",
+          s: "Sensors + edge + TVWS",
+          w: "30%",
+          crop: "Mixed",
+          l: "Complex setup",
+        },
+        {
+          n: "IBM Watson Agri.",
+          c: "Global",
+          s: "Satellite + IoT advisory",
+          w: "20%",
+          crop: "Large farms",
+          l: "Expensive, advisory only",
+        },
       ];
       return (
         <div className="h-full flex flex-col px-16 py-10">
@@ -196,9 +321,15 @@ export const slides: Slide[] = [
                 </div>
                 <div className="text-sm text-muted-foreground mb-2">💧 Water saved</div>
                 <div className="space-y-1.5 mt-auto text-sm">
-                  <div><span className="text-emerald font-semibold">Stack:</span> {x.s}</div>
-                  <div><span className="text-emerald font-semibold">Crop:</span> {x.crop}</div>
-                  <div><span className="text-destructive font-semibold">Limit:</span> {x.l}</div>
+                  <div>
+                    <span className="text-emerald font-semibold">Stack:</span> {x.s}
+                  </div>
+                  <div>
+                    <span className="text-emerald font-semibold">Crop:</span> {x.crop}
+                  </div>
+                  <div>
+                    <span className="text-destructive font-semibold">Limit:</span> {x.l}
+                  </div>
                 </div>
               </Card>
             ))}
@@ -212,8 +343,18 @@ export const slides: Slide[] = [
   {
     id: 6,
     render: () => {
-      const cols = ["Project", "IoT Sensors", "Automation", "Solar", "Real-Time", "Plant", "Weather", "Edge", "Cost"];
-      const rows: (string)[][] = [
+      const cols = [
+        "Project",
+        "IoT Sensors",
+        "Automation",
+        "Solar",
+        "Real-Time",
+        "Plant",
+        "Weather",
+        "Edge",
+        "Cost",
+      ];
+      const rows: string[][] = [
         ["WaterBee", "✅", "✅", "⚠️", "✅", "❌", "⚠️", "❌", "$$$"],
         ["CropX", "✅", "✅", "❌", "✅", "❌", "✅", "❌", "$$$"],
         ["Solar IoT", "✅", "⚠️", "✅", "✅", "❌", "❌", "⚠️", "$"],
@@ -228,12 +369,25 @@ export const slides: Slide[] = [
           <div className="overflow-hidden rounded-xl border border-border bg-card/40">
             <table className="w-full text-sm">
               <thead className="bg-emerald/15 text-emerald">
-                <tr>{cols.map((c) => <th key={c} className="px-3 py-3 text-left font-bold">{c}</th>)}</tr>
+                <tr>
+                  {cols.map((c) => (
+                    <th key={c} className="px-3 py-3 text-left font-bold">
+                      {c}
+                    </th>
+                  ))}
+                </tr>
               </thead>
               <tbody>
                 {rows.map((r, i) => (
-                  <tr key={i} className={`border-t border-border ${i === rows.length - 1 ? "bg-emerald/10 font-bold" : ""}`}>
-                    {r.map((cell, j) => <td key={j} className="px-3 py-3">{cell}</td>)}
+                  <tr
+                    key={i}
+                    className={`border-t border-border ${i === rows.length - 1 ? "bg-emerald/10 font-bold" : ""}`}
+                  >
+                    {r.map((cell, j) => (
+                      <td key={j} className="px-3 py-3">
+                        {cell}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
@@ -243,8 +397,9 @@ export const slides: Slide[] = [
             <div className="flex gap-3 items-start">
               <AlertTriangle className="w-5 h-5 text-emerald shrink-0 mt-0.5" />
               <p className="text-sm leading-relaxed">
-                <span className="font-bold text-emerald">Identified gaps:</span> no system unifies soil + weather + plant monitoring with edge autonomy
-                and solar power at an accessible cost. Our proposal targets these gaps directly.
+                <span className="font-bold text-emerald">Identified gaps:</span> no system unifies
+                soil + weather + plant monitoring with edge autonomy and solar power at an
+                accessible cost. Our proposal targets these gaps directly.
               </p>
             </div>
           </Card>
@@ -261,9 +416,13 @@ export const slides: Slide[] = [
         <SectionTitle kicker="05 · Problem" title="What Gap Does Our Research Address?" />
         <Card className="border-l-4 border-l-emerald mb-6">
           <p className="text-lg leading-relaxed">
-            Despite advances in smart irrigation, most existing systems focus primarily on <span className="text-emerald font-semibold">soil moisture monitoring</span>,
-            lack integrated <span className="text-emerald font-semibold">plant health analysis</span>, depend heavily on <span className="text-emerald font-semibold">cloud connectivity</span>{" "}
-            causing delays, and are not optimized for <span className="text-emerald font-semibold">semi-arid regions</span> with unstable network coverage.
+            Despite advances in smart irrigation, most existing systems focus primarily on{" "}
+            <span className="text-emerald font-semibold">soil moisture monitoring</span>, lack
+            integrated <span className="text-emerald font-semibold">plant health analysis</span>,
+            depend heavily on <span className="text-emerald font-semibold">cloud connectivity</span>{" "}
+            causing delays, and are not optimized for{" "}
+            <span className="text-emerald font-semibold">semi-arid regions</span> with unstable
+            network coverage.
           </p>
         </Card>
         <div className="grid grid-cols-2 gap-6 flex-1">
@@ -277,7 +436,10 @@ export const slides: Slide[] = [
                 "Poor adaptability to local crop varieties",
                 "Complex interfaces reducing farmer accessibility",
               ].map((c, i) => (
-                <li key={i} className="flex gap-3"><span className="text-destructive">❌</span>{c}</li>
+                <li key={i} className="flex gap-3">
+                  <span className="text-destructive">❌</span>
+                  {c}
+                </li>
               ))}
             </ul>
           </Card>
@@ -322,7 +484,9 @@ export const slides: Slide[] = [
                 <div className="w-14 h-14 rounded-xl bg-card border border-border flex items-center justify-center text-emerald font-extrabold text-xl shrink-0">
                   {i + 1}
                 </div>
-                <div className={`flex-1 rounded-xl p-5 bg-gradient-to-r ${l.c} text-navy-deep flex justify-between items-center`}>
+                <div
+                  className={`flex-1 rounded-xl p-5 bg-gradient-to-r ${l.c} text-navy-deep flex justify-between items-center`}
+                >
                   <div>
                     <div className="font-extrabold text-xl">{l.n}</div>
                     <div className="text-sm opacity-80">{l.d}</div>
@@ -340,7 +504,12 @@ export const slides: Slide[] = [
   // 9 SOIL
   modulePage(9, "Module 1 · Soil Monitoring", Sprout, "🌱", {
     Sensors: ["Capacitive soil moisture", "EC sensors", "Soil temperature probes", "pH sensors"],
-    Parameters: ["Volumetric Water Content (VWC)", "Electrical Conductivity", "Soil Temperature", "Nutrient levels"],
+    Parameters: [
+      "Volumetric Water Content (VWC)",
+      "Electrical Conductivity",
+      "Soil Temperature",
+      "Nutrient levels",
+    ],
     Placement: ["Multi-depth: 10 cm", "30 cm", "60 cm"],
     Output: ["Irrigation deficit index", "Field capacity status"],
   }),
@@ -357,7 +526,12 @@ export const slides: Slide[] = [
   modulePage(11, "Module 3 · Plant Monitoring", Leaf, "🌿", {
     Approach: ["RGB & NIR camera monitoring", "Leaf condition sensors"],
     "Sensors & Tools": ["Leaf wetness sensor", "NDVI camera module", "Chlorophyll meter"],
-    Parameters: ["Leaf water potential", "Canopy temperature", "NDVI index", "Visible disease symptoms"],
+    Parameters: [
+      "Leaf water potential",
+      "Canopy temperature",
+      "NDVI index",
+      "Visible disease symptoms",
+    ],
     Output: ["Plant health score", "Irrigation urgency flag"],
   }),
 
@@ -366,19 +540,29 @@ export const slides: Slide[] = [
     Components: ["Solenoid valves", "Flow meters", "Pressure sensors", "Fertigation injectors"],
     "Control Logic": ["Sensor thresholds", "Automated scheduling rules"],
     Modes: ["Manual", "Scheduled", "Autonomous"],
-    Features: ["Zone-by-zone control", "Water volume metering", "Fertigation integration", "Solar-powered battery backup"],
+    Features: [
+      "Zone-by-zone control",
+      "Water volume metering",
+      "Fertigation integration",
+      "Solar-powered battery backup",
+    ],
   }),
 
   // 13 COMM
   modulePage(13, "Module 5 · IoT Communication", Radio, "📡", {
     Architecture: ["Hybrid Star + Mesh topology"],
-    Protocols: ["LoRaWAN — long range", "MQTT — cloud messaging", "Zigbee — sensor mesh", "4G/NB-IoT — fallback"],
+    Protocols: [
+      "LoRaWAN — long range",
+      "MQTT — cloud messaging",
+      "Zigbee — sensor mesh",
+      "4G/NB-IoT — fallback",
+    ],
     Hardware: ["Gateway: Raspberry Pi 4 + LoRa + 4G", "Edge: ESP32 sensor clusters"],
     Security: ["TLS encryption", "Authentication tokens"],
   }),
 
   // 14 PROCESSING
-  modulePage(14, "Module 6 · Data Processing & Automation", Settings, "⚙️", {
+  modulePage(14, "Module 6 · Data Processing", Settings, "⚙️", {
     "Edge (Local)": ["Real-time anomaly detection", "Threshold-based control", "Offline operation"],
     Cloud: ["Historical analytics", "Dashboard visualization", "Long-term storage"],
     Pipeline: ["Raw → Preprocess → Features → Decision → Actuation"],
@@ -469,10 +653,17 @@ export const slides: Slide[] = [
           <SectionTitle kicker="Validation" title="Expected Outcomes & Performance Metrics" />
           <div className="grid grid-cols-4 gap-4 flex-1">
             {m.map((x, i) => (
-              <Card key={i} className={`flex flex-col justify-between ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
+              <Card
+                key={i}
+                className={`flex flex-col justify-between ${i === 0 ? "col-span-2 row-span-2" : ""}`}
+              >
                 <div className="flex items-center justify-between">
                   <x.i className={`text-emerald ${i === 0 ? "w-12 h-12" : "w-7 h-7"}`} />
-                  <div className={`font-extrabold text-emerald ${i === 0 ? "text-7xl" : "text-3xl"}`}>{x.v}</div>
+                  <div
+                    className={`font-extrabold text-emerald ${i === 0 ? "text-7xl" : "text-3xl"}`}
+                  >
+                    {x.v}
+                  </div>
                 </div>
                 <div className="mt-4">
                   <div className={`font-bold ${i === 0 ? "text-2xl" : "text-base"}`}>{x.k}</div>
@@ -505,7 +696,9 @@ export const slides: Slide[] = [
               ].map((x, i) => (
                 <Card key={i} className="border-l-4 border-l-emerald">
                   <div className="flex gap-3">
-                    <div className="text-emerald font-extrabold text-2xl leading-none">0{i + 1}</div>
+                    <div className="text-emerald font-extrabold text-2xl leading-none">
+                      0{i + 1}
+                    </div>
                     <p className="text-sm leading-relaxed">{x}</p>
                   </div>
                 </Card>
@@ -530,7 +723,9 @@ export const slides: Slide[] = [
               ))}
             </div>
             <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-emerald/20 to-transparent border-l-4 border-emerald">
-              <div className="text-xs uppercase tracking-widest text-emerald font-bold mb-2">Closing Statement</div>
+              <div className="text-xs uppercase tracking-widest text-emerald font-bold mb-2">
+                Closing Statement
+              </div>
               <p className="text-xl font-display font-bold italic leading-snug">
                 "Toward a water-secure, data-driven, and climate-resilient agriculture."
               </p>
@@ -545,40 +740,156 @@ export const slides: Slide[] = [
     id: 999,
     title: "References",
     render: () => {
-      const groups: { heading: string; items: { authors: string; title: string; venue: string; url: string }[] }[] = [
+      const groups: {
+        heading: string;
+        items: { authors: string; title: string; venue: string; url: string }[];
+      }[] = [
         {
           heading: "IoT Architectures, LoRa & Sensing",
           items: [
-            { authors: "Mishra, A. K., Kumar, N., Sharma, V., Chauhan, V., & Kumar, S.", title: "IoT based Smart Irrigation System", venue: "SSRN, 2023", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4453221" },
-            { authors: "Author(s)", title: "IoT-based Smart Irrigation Control System using LoRa Communication", venue: "ResearchGate, 2022", url: "https://www.researchgate.net/publication/360000000" },
-            { authors: "Author(s)", title: "IoT-enabled smart agriculture for improving water management: embedded systems and Server-Sent Events", venue: "Computers and Electronics in Agriculture, Elsevier, 2023", url: "https://www.sciencedirect.com/science/article/pii/S2214317323000409" },
-            { authors: "Millán, S., et al.", title: "Soil Water Status Monitoring with Proximal Low-Cost Sensors and LoRa for Smart Irrigation in Woody Crops", venue: "Sensors / PMC, 2023", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10058579/" },
-            { authors: "Author(s)", title: "Soil moisture monitoring technologies in smart agriculture: A comprehensive review", venue: "Computers and Electronics in Agriculture, Elsevier, 2024", url: "https://www.sciencedirect.com/science/article/pii/S0168169924001923" },
-            { authors: "Author(s)", title: "An IoT-Based Smart Plant Monitoring and Irrigation System with Real-Time Sensing and Cloud Analytics", venue: "arXiv, 2024", url: "https://arxiv.org/abs/2403.00000" },
-            { authors: "Author(s)", title: "Internet of Things (IoT) for Soil Moisture Tensiometer Automation", venue: "Sensors / NCBI, 2022", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9920000/" },
+            {
+              authors: "Mishra, A. K., Kumar, N., Sharma, V., Chauhan, V., & Kumar, S.",
+              title: "IoT based Smart Irrigation System",
+              venue: "SSRN, 2023",
+              url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4453221",
+            },
+            {
+              authors: "Author(s)",
+              title: "IoT-based Smart Irrigation Control System using LoRa Communication",
+              venue: "ResearchGate, 2022",
+              url: "https://www.researchgate.net/publication/360000000",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "IoT-enabled smart agriculture for improving water management: embedded systems and Server-Sent Events",
+              venue: "Computers and Electronics in Agriculture, Elsevier, 2023",
+              url: "https://www.sciencedirect.com/science/article/pii/S2214317323000409",
+            },
+            {
+              authors: "Millán, S., et al.",
+              title:
+                "Soil Water Status Monitoring with Proximal Low-Cost Sensors and LoRa for Smart Irrigation in Woody Crops",
+              venue: "Sensors / PMC, 2023",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10058579/",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Soil moisture monitoring technologies in smart agriculture: A comprehensive review",
+              venue: "Computers and Electronics in Agriculture, Elsevier, 2024",
+              url: "https://www.sciencedirect.com/science/article/pii/S0168169924001923",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "An IoT-Based Smart Plant Monitoring and Irrigation System with Real-Time Sensing and Cloud Analytics",
+              venue: "arXiv, 2024",
+              url: "https://arxiv.org/abs/2403.00000",
+            },
+            {
+              authors: "Author(s)",
+              title: "Internet of Things (IoT) for Soil Moisture Tensiometer Automation",
+              venue: "Sensors / NCBI, 2022",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9920000/",
+            },
           ],
         },
         {
           heading: "Data-Driven Irrigation Scheduling & Forecasting",
           items: [
-            { authors: "Author(s)", title: "Machine learning and digital twins in smart irrigation: optimising water use through agricultural data analytics", venue: "Taylor & Francis, 2024", url: "https://www.tandfonline.com/doi/full/10.1080/00000000.2024.0000000" },
-            { authors: "Author(s)", title: "Machine Learning Approaches for Crop Water Requirement Prediction and Optimization", venue: "DergiPark, 2023", url: "https://dergipark.org.tr/en/pub/" },
-            { authors: "Author(s)", title: "Advances in machine learning for agricultural water management: a review", venue: "Journal of Hydroinformatics, IWA Publishing, 2024", url: "https://iwaponline.com/jh/" },
-            { authors: "Author(s)", title: "Deep learning for intelligent irrigation decision-making: A review", venue: "Computers and Electronics in Agriculture, Elsevier, 2024", url: "https://www.sciencedirect.com/science/article/pii/S0168169924002400" },
-            { authors: "Author(s)", title: "An accurate irrigation volume prediction method based on an optimized LSTM model", venue: "Scientific Reports / PMC, 2023", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10300000/" },
-            { authors: "Author(s)", title: "Improving Irrigation Scheduling through Deep Learning-Based Reference Evapotranspiration Estimation", venue: "ETASR, 2023", url: "https://etasr.com/index.php/ETASR/article/view/0000" },
-            { authors: "Author(s)", title: "Daily reference evapotranspiration prediction based on the hybrid PSO-LSTM model", venue: "NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10800000/" },
+            {
+              authors: "Author(s)",
+              title:
+                "Machine learning and digital twins in smart irrigation: optimising water use through agricultural data analytics",
+              venue: "Taylor & Francis, 2024",
+              url: "https://www.tandfonline.com/doi/full/10.1080/00000000.2024.0000000",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Machine Learning Approaches for Crop Water Requirement Prediction and Optimization",
+              venue: "DergiPark, 2023",
+              url: "https://dergipark.org.tr/en/pub/",
+            },
+            {
+              authors: "Author(s)",
+              title: "Advances in machine learning for agricultural water management: a review",
+              venue: "Journal of Hydroinformatics, IWA Publishing, 2024",
+              url: "https://iwaponline.com/jh/",
+            },
+            {
+              authors: "Author(s)",
+              title: "Deep learning for intelligent irrigation decision-making: A review",
+              venue: "Computers and Electronics in Agriculture, Elsevier, 2024",
+              url: "https://www.sciencedirect.com/science/article/pii/S0168169924002400",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "An accurate irrigation volume prediction method based on an optimized LSTM model",
+              venue: "Scientific Reports / PMC, 2023",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10300000/",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Improving Irrigation Scheduling through Deep Learning-Based Reference Evapotranspiration Estimation",
+              venue: "ETASR, 2023",
+              url: "https://etasr.com/index.php/ETASR/article/view/0000",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Daily reference evapotranspiration prediction based on the hybrid PSO-LSTM model",
+              venue: "NCBI, 2024",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10800000/",
+            },
           ],
         },
         {
           heading: "Plant Health, Vision & Disease Detection",
           items: [
-            { authors: "Author(s)", title: "An intelligent framework for crop health surveillance and disease management", venue: "PMC / NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11000000/" },
-            { authors: "Author(s)", title: "A lightweight and explainable CNN model for empowering plant disease diagnosis", venue: "Scientific Reports, Nature, 2024", url: "https://www.nature.com/articles/s41598-024-00000-0" },
-            { authors: "Author(s)", title: "Computer Vision, IoT and Data Fusion for Crop Disease Detection: A Survey", venue: "MDPI Agronomy, 2023", url: "https://www.mdpi.com/" },
-            { authors: "Author(s)", title: "Deep learning and computer vision in plant disease detection: a comprehensive review", venue: "Artificial Intelligence Review, Springer, 2024", url: "https://link.springer.com/article/10.1007/s10462-024-00000-0" },
-            { authors: "Author(s)", title: "Revolutionizing crop disease detection with computational deep learning: a comprehensive review", venue: "PMC, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11200000/" },
-            { authors: "Author(s)", title: "Comprehensive plant health monitoring: expert-level assessment with spatio-temporal image data", venue: "NCBI, 2024", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11300000/" },
+            {
+              authors: "Author(s)",
+              title: "An intelligent framework for crop health surveillance and disease management",
+              venue: "PMC / NCBI, 2024",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11000000/",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "A lightweight and explainable CNN model for empowering plant disease diagnosis",
+              venue: "Scientific Reports, Nature, 2024",
+              url: "https://www.nature.com/articles/s41598-024-00000-0",
+            },
+            {
+              authors: "Author(s)",
+              title: "Computer Vision, IoT and Data Fusion for Crop Disease Detection: A Survey",
+              venue: "MDPI Agronomy, 2023",
+              url: "https://www.mdpi.com/",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Deep learning and computer vision in plant disease detection: a comprehensive review",
+              venue: "Artificial Intelligence Review, Springer, 2024",
+              url: "https://link.springer.com/article/10.1007/s10462-024-00000-0",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Revolutionizing crop disease detection with computational deep learning: a comprehensive review",
+              venue: "PMC, 2024",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11200000/",
+            },
+            {
+              authors: "Author(s)",
+              title:
+                "Comprehensive plant health monitoring: expert-level assessment with spatio-temporal image data",
+              venue: "NCBI, 2024",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11300000/",
+            },
           ],
         },
       ];
@@ -588,12 +899,22 @@ export const slides: Slide[] = [
           <div className="grid grid-cols-3 gap-5 flex-1 overflow-hidden">
             {groups.map((g) => (
               <Card key={g.heading} className="flex flex-col overflow-hidden">
-                <h3 className="text-emerald font-bold uppercase tracking-widest text-xs mb-3">{g.heading}</h3>
+                <h3 className="text-emerald font-bold uppercase tracking-widest text-xs mb-3">
+                  {g.heading}
+                </h3>
                 <ol className="space-y-2 text-[11px] leading-snug list-decimal pl-4 overflow-auto pr-1">
                   {g.items.map((r, i) => (
                     <li key={i}>
-                      <span className="font-semibold">{r.authors}</span> "{r.title}." <span className="italic text-muted-foreground">{r.venue}</span>.{" "}
-                      <a href={r.url} target="_blank" rel="noreferrer" className="text-emerald underline break-all">{r.url}</a>
+                      <span className="font-semibold">{r.authors}</span> "{r.title}."{" "}
+                      <span className="italic text-muted-foreground">{r.venue}</span>.{" "}
+                      <a
+                        href={r.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-emerald underline break-all"
+                      >
+                        {r.url}
+                      </a>
                     </li>
                   ))}
                 </ol>
@@ -601,7 +922,9 @@ export const slides: Slide[] = [
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-4 italic">
-            Peer-reviewed sources spanning IoT hardware (LoRa, ESP32, soil moisture sensors), ML-based scheduling (LSTM, evapotranspiration forecasting), and computer-vision plant health monitoring (2022–2024).
+            Peer-reviewed sources spanning IoT hardware (LoRa, ESP32, soil moisture sensors),
+            ML-based scheduling (LSTM, evapotranspiration forecasting), and computer-vision plant
+            health monitoring (2022–2024).
           </p>
         </div>
       );
@@ -615,7 +938,7 @@ function modulePage(
   title: string,
   Icon: any,
   emoji: string,
-  sections: Record<string, string[]>
+  sections: Record<string, string[]>,
 ): Slide {
   return {
     id,
@@ -626,7 +949,9 @@ function modulePage(
             {emoji}
           </div>
           <div>
-            <div className="text-emerald font-semibold tracking-widest uppercase text-xs">06 · Architecture</div>
+            <div className="text-emerald font-semibold tracking-widest uppercase text-xs">
+              06 · Architecture
+            </div>
             <h2 className="text-4xl font-extrabold">{title}</h2>
           </div>
         </div>
@@ -635,7 +960,9 @@ function modulePage(
             <Card key={k}>
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-2 h-2 rounded-full bg-emerald" />
-                <h3 className="font-bold text-lg text-emerald uppercase tracking-wider text-sm">{k}</h3>
+                <h3 className="font-bold text-lg text-emerald uppercase tracking-wider text-sm">
+                  {k}
+                </h3>
               </div>
               <ul className="space-y-2">
                 {items.map((it, i) => (
